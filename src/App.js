@@ -1,12 +1,16 @@
-import React from 'react'
-import GlobalStyles from "GlobalStyles"
+import React from "react";
+import GlobalStyles from "GlobalStyles";
+import { Routes } from "react-router-dom";
 
 const App = () => {
   return (
     <>
       <GlobalStyles />
-    </>
-  )
-}
+      <Routes>
 
-export default App
+      </Routes>
+    </>
+  );
+};
+
+export default App;
