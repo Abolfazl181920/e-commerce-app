@@ -3,10 +3,10 @@ import { useState } from "react";
 
 //a custom hook for user input validation
 const useInput = (validate, require) => {
-  const [value, setValue] = useState("");
-  const [isFormValid, setIsFormValid] = useState(false);
-  const [hasError, setHasError] = useState(require);
-  const [isTouched, setIsTouched] = useState(false);
+  const [ value, setValue ] = useState("");
+  const [ isFormValid, setIsFormValid ] = useState(false);
+  const [ hasError, setHasError ] = useState(require);
+  const [ isTouched, setIsTouched ] = useState(false);
 
   //a function to store users entered value
   const onChangeHandler = (e) => {
