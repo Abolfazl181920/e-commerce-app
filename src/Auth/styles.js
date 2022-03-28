@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-// Signup styles
+// Signup.js and Signin.js styles
 export const FormBodyFlex = styled.div`
     display: flex;
     justify-content: center;
@@ -45,3 +45,5 @@ export const Inputs = styled.input`
     color: #fff;
     border-radius: .7rem;
 `
+
+// Button.js styles
