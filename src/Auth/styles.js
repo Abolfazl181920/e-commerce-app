@@ -22,7 +22,7 @@ export const FormBody = styled.form`
 
 export const FormTitle = styled.span`
     color: #fff;
-    margin-top: 7rem;
+    margin-top: 5rem;
     position: absolute;
     font-size: 1.2rem;
 `
@@ -44,4 +44,18 @@ export const Inputs = styled.input`
     cursor: pointer;
     color: #fff;
     border-radius: .7rem;
+`
+
+
+// Button.js styles
+export const FormButton = styled.button`
+    height: 2.5rem;
+    width: 8rem;
+    font-weight: 700;
+    background-color: rgb(32, 31, 31);
+    color: #fff;
+    margin-top: 20rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
 `

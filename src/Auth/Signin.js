@@ -1,4 +1,5 @@
 import { FormBodyFlex, FormBody, Inputs, InputsParent, FormTitle }  from './styles'
+import Button from './Button'
 
 const Signin = () => {
     return (
@@ -8,7 +9,7 @@ const Signin = () => {
                 <InputsParent>
                     <Inputs
                         placeholder="&nbsp;&nbsp;&nbsp;Name"
-                        margintop="11rem"
+                        margintop="9rem"
                     />
                     <Inputs
                         placeholder="&nbsp;&nbsp;&nbsp;Family"
@@ -19,6 +20,7 @@ const Signin = () => {
                         margintop="1rem"
                     />
                 </InputsParent>
+                <Button />
             </FormBody>
         </FormBodyFlex>
     )

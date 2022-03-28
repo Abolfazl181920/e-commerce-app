@@ -1,5 +1,5 @@
 import { FormBodyFlex, FormBody, Inputs, InputsParent, FormTitle }  from './styles'
-import FormLogo from '../Assests/logo2.png'
+import Button from './Button'
 
 const Signup = () => {
     return (
@@ -9,7 +9,7 @@ const Signup = () => {
                 <InputsParent>
                     <Inputs
                         placeholder="&nbsp;&nbsp;&nbsp;Name"
-                        margintop="11rem"
+                        margintop="9rem"
                     />
                     <Inputs
                         placeholder="&nbsp;&nbsp;&nbsp;Family"
@@ -20,6 +20,7 @@ const Signup = () => {
                         margintop="1rem"
                     />
                 </InputsParent>
+                <Button />
             </FormBody>
         </FormBodyFlex>
     )
