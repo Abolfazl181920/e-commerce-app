@@ -44,6 +44,11 @@ export const Inputs = styled.input`
     cursor: pointer;
     color: #fff;
     border-radius: .7rem;
+    flex-direction: row;
+
+    @media (max-width: 440px) {
+       width: 14rem;
+    }
 `
 
 
@@ -58,4 +63,10 @@ export const FormButton = styled.button`
     border: none;
     border-radius: 1rem;
     cursor: pointer;
+
+    @media (max-width: 440px) {
+        height: 1.8rem;
+        width: 5.5rem;
+        margin-top: 18.5rem;
+    }
 `
