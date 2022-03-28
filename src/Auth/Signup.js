@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { FormBodyFlex, FormBody, Inputs, InputsParent, FormTitle }  from './styles'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -19,9 +20,11 @@ const Signup = () => {
            })
         } else {
             setIsValid(true)
-            toast("Your regestration is completed!", {
+            toast("Your regestration is completed! You will redirect to Sign in page after 3 seconds ...", {
                 theme:"dark"
             })
+
+            // I will create a function to redirect user to /signin
         }
     }
 
