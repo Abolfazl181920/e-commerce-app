@@ -2,19 +2,9 @@ import { FormBodyFlex, FormBody, Inputs, InputsParent, FormTitle }  from './styl
 import FormLogo from '../Assests/logo2.png'
 
 const Signup = () => {
-
-    const FormImgStyles = {
-        width: '4.8rem',
-        height: '4.7rem',
-        borderRadius: '.5rem',
-        marginTop: '1.2rem',
-        cursor: 'pointer'
-    }
-
     return (
         <FormBodyFlex>
             <FormBody>
-                <img src={FormLogo} style={FormImgStyles} />
                 <FormTitle>Sign up</FormTitle>
                 <InputsParent>
                     <Inputs

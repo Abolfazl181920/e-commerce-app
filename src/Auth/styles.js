@@ -7,7 +7,7 @@ export const FormBodyFlex = styled.div`
     flex-direction: row;
     align-items: center;
     min-height: 100vh;
-`;
+`
 
 export const FormBody = styled.form`
     display: flex;
@@ -18,7 +18,7 @@ export const FormBody = styled.form`
     background-color: #111111;
     color: rgb(240, 231, 231);
     font-weight: 700;
-`;
+`
 
 export const FormTitle = styled.span`
     color: #fff;
@@ -45,5 +45,3 @@ export const Inputs = styled.input`
     color: #fff;
     border-radius: .7rem;
 `
-
-// Button.js styles
