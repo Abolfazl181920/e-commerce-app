@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Formcontainer = () => {
+const Formwrapper = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Formcontainer = () => {
     )
 }
 
-export default Formcontainer
+export default Formwrapper

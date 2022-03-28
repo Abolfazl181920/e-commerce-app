@@ -1,10 +1,10 @@
-import React from 'react'
+import { FormBody }  from './styles'
 
 const Signup = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <FormBody></FormBody>
+        </>
     )
 }
 
