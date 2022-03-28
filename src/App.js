@@ -1,10 +1,11 @@
 import React from 'react'
+import GlobalStyles from "GlobalStyles"
 
 const App = () => {
   return (
-    <div>
-      e-commerce-app
-    </div>
+    <>
+      <GlobalStyles />
+    </>
   )
 }
 
