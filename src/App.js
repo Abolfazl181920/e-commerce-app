@@ -1,14 +1,21 @@
-import React from "react";
-import GlobalStyles from "GlobalStyles";
-import { Routes } from "react-router-dom";
+import GlobalStyles from "GlobalStyles"
+// import Formwrapper from './Auth/Formwrapper'
+import Signup from 'Auth/Signup'
+import Signin from 'Auth/Signin'
+import { Routes, BrowserRouter as Router, Route } from "react-router-dom"
 
 const App = () => {
   return (
     <>
       <GlobalStyles />
-      <Routes>
 
-      </Routes>
+      <Router>
+        <Routes>
+          {/* <Route path="/form" element={ <Formwrapper /> } /> */}
+          <Route path="/signup" element={ <Signup /> } />
+          <Route path="/Signin" element={ <Signin /> } />
+        </Routes>
+      </Router>
     </>
   );
 };
