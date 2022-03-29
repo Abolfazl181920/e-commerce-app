@@ -1,11 +1,8 @@
-import React from 'react'
+import { FormButton } from "./styles";
 
-const Button = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+const Button = (props) => {
+  const { isDisable } = props;
+  return <FormButton disabled={isDisable}>Submit</FormButton>;
+};
 
-export default Button
+export default Button;
