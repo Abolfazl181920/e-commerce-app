@@ -41,7 +41,7 @@ const SideNav = styled.div`
   height: 100%;
   min-width: 70%;
   top: 0;
-  right: ${(props) => (props.display ? "0" : "-150%")};
+  right: ${(props) => (props.display === "true" ? "0" : "-150%")};
   z-index: 2;
   transition: right 0.4s;
   display: flex;
@@ -60,8 +60,8 @@ const Backdrop = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  opacity: ${(props) => (props.display ? 1 : 0)};
-  ${(props) => (!props.display ? "pointer-events: none;" : "")}
+  opacity: ${(props) => (props.display === 'true' ? 1 : 0)};
+  ${(props) => (props.display === "false" ? "pointer-events: none;" : "")}
   transition: opacity 0.4s;
   @media (min-width: 767px) {
     display: none;
@@ -97,7 +97,7 @@ const SmallNavBar = () => {
             setIsOpen(false);
         }}
         //should be displayed or not
-        display={isOpen}
+        display={isOpen.toString()}
       />
       <NavContent type="small">
         <NavTitle title="e-commerce" />
@@ -111,7 +111,7 @@ const SmallNavBar = () => {
           <Bar1 />
         </MenuIconContainer>
       </NavContent>
-      <SideNav display={isOpen}>
+      <SideNav display={isOpen.toString()}>
         <CloseIconContainer
           //if user click on X icon, close the menu
           onClick={() => {

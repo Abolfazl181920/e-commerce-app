@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 //a component to display sign up link
 const SignUpLink = () => {
-  return <Link to="/signin" className={styles.signup}>Sign up</Link>;
+  return <Link to="/signup" className={styles.signup}>Sign up</Link>;
 };
 
 export default SignUpLink;

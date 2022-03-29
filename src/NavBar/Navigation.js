@@ -43,13 +43,19 @@ export const Actions = styled.div`
   align-items: center;
 `;
 
+const Header = styled.header`
+  padding-bottom: 100px;
+`;
+
 //a container that contains large and small navbar
 const Navigation = () => {
   return (
-    <Nav>
-      <LargeNavBar />
-      <SmallNavBar />
-    </Nav>
+    <Header>
+      <Nav>
+        <LargeNavBar />
+        <SmallNavBar />
+      </Nav>
+    </Header>
   );
 };
 

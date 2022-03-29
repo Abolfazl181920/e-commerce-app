@@ -1,29 +1,85 @@
-import { FormBodyFlex, FormBody, Inputs, InputsParent, FormTitle }  from './styles'
-import Button from './Button'
+import {
+  FormBody,
+  Inputs,
+  FormTitle,
+  InputContainer,
+  InputLabel,
+  Input,
+  ButtonContainer,
+  ErrorText,
+} from "./styles";
+import Button from "./Button";
+import useInput from "hooks/use-input";
 
 const Signin = () => {
-    return (
-        <FormBodyFlex>
-            <FormBody>
-                <FormTitle>Sign in</FormTitle>
-                <InputsParent>
-                    <Inputs
-                        placeholder="&nbsp;&nbsp;&nbsp;Name"
-                        margintop="9rem"
-                    />
-                    <Inputs
-                        placeholder="&nbsp;&nbsp;&nbsp;Family"
-                        margintop="1rem"
-                    />
-                    <Inputs
-                        placeholder="&nbsp;&nbsp;&nbsp;Email"
-                        margintop="1rem"
-                    />
-                </InputsParent>
-                <Button />
-            </FormBody>
-        </FormBodyFlex>
-    )
-}
+  //email validation
+  const {
+    value: email,
+    hasError: emailHasError,
+    isTouched: emailIsTouched,
+    isFormValid: emailIsValid,
+    onBlurHandler: emailOnBlurHandler,
+    onChangeHandler: emailOnChangeHandler,
+  } = useInput(
+    (value) => /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(value),
+    true
+  );
 
-export default Signin
+  const {
+    value: password,
+    onChangeHandler: passwordOnChangeHandler,
+    hasError: passwordHasError,
+    isFormValid: passwordIsValid,
+    isTouched: passwordIsTouched,
+    onBlurHandler: passwordOnBlurHandler
+  } = useInput((value) => value.trim() !== "", true);
+
+  return (
+    <FormBody action="#" data-testid="signup">
+      <FormTitle>Sign in</FormTitle>
+      <Inputs>
+        <InputContainer>
+          <InputLabel htmlFor="email">email</InputLabel>
+          <Input
+            id="email"
+            type="text"
+            placeholder="please enter your email"
+            onChange={emailOnChangeHandler}
+            onBlur={emailOnBlurHandler}
+            value={email}
+          />
+          {emailHasError && emailIsTouched ? (
+            <ErrorText>
+              {email.trim() === ""
+                ? "please enter your email."
+                : "please enter your correct email."}
+            </ErrorText>
+          ) : (
+            ""
+          )}
+        </InputContainer>
+        <InputContainer>
+          <InputLabel htmlFor="password">password</InputLabel>
+          <Input
+            id="password"
+            type="password"
+            placeholder="please enter your password"
+            value={password}
+            onChange={passwordOnChangeHandler}
+            onBlur={passwordOnBlurHandler}
+          />
+          {passwordHasError && passwordIsTouched ? (
+            <ErrorText>please enter your password</ErrorText>
+          ) : (
+            ""
+          )}
+        </InputContainer>
+      </Inputs>
+      <ButtonContainer>
+        <Button isDisable={!emailIsValid || !passwordIsValid} />
+      </ButtonContainer>
+    </FormBody>
+  );
+};
+
+export default Signin;
