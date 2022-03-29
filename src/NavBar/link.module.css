@@ -1,0 +1,58 @@
+.select {
+    background-color: #603cb7 !important;
+    color: #fff !important;
+}
+
+.link {
+    padding: 5px;
+    color: #000;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.link:hover {
+    color: #fff;
+    background-color: #603cb7;
+}
+
+.signin {
+    margin-right: 25px;
+    font-size: 16px;
+}
+
+.signin:hover {
+    color: #603cb7;
+}
+
+.signup {
+    padding: 10px 15px;
+    border: #603cb7 1px solid;
+    border-radius: 3px;
+    color: #603cb7;
+    font-size: 16px;
+}
+
+.signup:hover {
+    background-color: #603cb7;
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .link {
+        font-size: 20px;
+        padding: 8px;
+        min-width: 100px;
+    }
+
+    .signin {
+        margin-bottom: 15px;
+        margin-right: 0;
+    }
+}

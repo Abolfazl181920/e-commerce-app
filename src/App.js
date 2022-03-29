@@ -1,21 +1,20 @@
-import GlobalStyles from "GlobalStyles"
-// import Formwrapper from './Auth/Formwrapper'
-import Signup from 'Auth/Signup'
-import Signin from 'Auth/Signin'
-import { Routes, BrowserRouter as Router, Route } from "react-router-dom"
+import GlobalStyles from "GlobalStyles";
+import Signup from "Auth/Signup";
+import Signin from "Auth/Signin";
+import { Routes, Route } from "react-router-dom";
+import Navigation from "NavBar/Navigation";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   return (
     <>
+      <ToastContainer />
       <GlobalStyles />
-
-      <Router>
-        <Routes>
-          {/* <Route path="/form" element={ <Formwrapper /> } /> */}
-          <Route path="/signup" element={ <Signup /> } />
-          <Route path="/Signin" element={ <Signin /> } />
-        </Routes>
-      </Router>
+      <Navigation />
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/Signin" element={<Signin />} />
+      </Routes>
     </>
   );
 };
