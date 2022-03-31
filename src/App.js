@@ -6,6 +6,7 @@ import Navigation from "NavBar/Navigation";
 import { ToastContainer } from "react-toastify";
 import { createClient } from "@supabase/supabase-js";
 import { useEffect } from "react";
+import ProductItem from "Product/product-item/ProductItem";
 
 export const supabase = createClient(
   process.env.REACT_APP_API_URL,
