@@ -11,9 +11,14 @@ import {
 import "react-toastify/dist/ReactToastify.css";
 import Button from "./Button";
 import useInput from "hooks/use-input";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { signUp } from "store/userSlice";
 
 const Signup = () => {
+  const dispatch = useDispatch();
+  const [isSigningUp, setIsSigningUp] = useState(false);
+
   //username validation
   const {
     value: username,
@@ -67,8 +72,18 @@ const Signup = () => {
     }
   }, [password, repeatPassword]);
 
+  const signUpHandler = (e) => {
+    e.preventDefault();
+    setIsSigningUp(true);
+    dispatch(
+      signUp({ email, password, username }, () => {
+        setIsSigningUp(false);
+      })
+    );
+  };
+
   return (
-    <FormBody action="#" data-testid="signup">
+    <FormBody onSubmit={signUpHandler} data-testid="signup">
       <FormTitle>Sign up</FormTitle>
       <Inputs>
         <InputContainer>
@@ -151,7 +166,8 @@ const Signup = () => {
             !usernameIsValid ||
             !emailIsValid ||
             !passwordIsValid ||
-            !repeatPasswordIsValid
+            !repeatPasswordIsValid ||
+            isSigningUp
           }
         />
       </ButtonContainer>
