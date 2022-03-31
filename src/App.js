@@ -4,8 +4,16 @@ import Signin from "Auth/Signin";
 import { Routes, Route } from "react-router-dom";
 import Navigation from "NavBar/Navigation";
 import { ToastContainer } from "react-toastify";
+import { createClient } from "@supabase/supabase-js";
+import { useEffect } from "react";
+
+export const supabase = createClient(
+  process.env.REACT_APP_API_URL,
+  process.env.REACT_APP_API_KEY
+);
 
 const App = () => {
+
   return (
     <>
       <ToastContainer />

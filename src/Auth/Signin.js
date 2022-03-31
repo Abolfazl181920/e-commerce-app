@@ -10,8 +10,15 @@ import {
 } from "./styles";
 import Button from "./Button";
 import useInput from "hooks/use-input";
+import { useDispatch } from "react-redux";
+import { signIn } from "store/userSlice";
+import { useState } from "react";
 
 const Signin = () => {
+  const dispatch = useDispatch();
+
+  const [isPending, setIsPending] = useState(false);
+
   //email validation
   const {
     value: email,
@@ -31,11 +38,21 @@ const Signin = () => {
     hasError: passwordHasError,
     isFormValid: passwordIsValid,
     isTouched: passwordIsTouched,
-    onBlurHandler: passwordOnBlurHandler
+    onBlurHandler: passwordOnBlurHandler,
   } = useInput((value) => value.trim() !== "", true);
 
+  const signInHandler = (e) => {
+    e.preventDefault();
+    setIsPending(true);
+    dispatch(
+      signIn({ email, password }, () => {
+        setIsPending(false);
+      })
+    );
+  };
+
   return (
-    <FormBody action="#" data-testid="signup">
+    <FormBody onSubmit={signInHandler} data-testid="signup">
       <FormTitle>Sign in</FormTitle>
       <Inputs>
         <InputContainer>
@@ -76,7 +93,7 @@ const Signin = () => {
         </InputContainer>
       </Inputs>
       <ButtonContainer>
-        <Button isDisable={!emailIsValid || !passwordIsValid} />
+        <Button isDisable={!emailIsValid || !passwordIsValid || isPending} />
       </ButtonContainer>
     </FormBody>
   );
